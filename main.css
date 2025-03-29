@@ -1,9 +1,7 @@
-body{
-    background:#0F2027;
-    background:-webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027) ;
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+body {
+    overflow: hidden;
+    background-color: rgb(41, 40, 40);
 }
-
 #join-btn{
     position: fixed;
     top:50%;
@@ -23,9 +21,13 @@ body{
 }
 
 .video-container{
-    max-height: 100%;
+    height: 65%;
+    width: 75%;
     border: 2px solid black;
     background-color: #203A49;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .video-player{
@@ -33,7 +35,7 @@ body{
     width: 100%;
 }
 
-button{
+/* button{
     border:none;
     background-color: cadetblue;
     color:#fff;
@@ -41,12 +43,14 @@ button{
     font-size:16px;
     margin:2px;
     cursor: pointer;
-}
+} */
 
 #stream-controls{
-    display: none;
     justify-content: center;
-    margin-top:0.5em;
+    margin-top: -180px;
+    display: flex;
+    gap: 50px;
+    visibility: hidden;
 }
 
 @media screen and (max-width:1400px){
@@ -54,4 +58,106 @@ button{
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         width: 95%;
     }
+}
+#eyes {
+    display: flex;
+    gap: 50px;
+    width: 470px;
+    height: 115px;
+    margin-top: 30px;
+    margin-left: 32.5%;
+    visibility: hidden;
+}
+
+#left-eye {
+  width: 210px;
+  height: 115px;
+  background-color: #009cd7; /* Màu xanh dương */
+  border-radius: 50%;
+  transform: rotate(20deg) skewX(10deg); /* Đảo hướng mắt */
+  box-shadow: 0 0 20px #009cd7; /* Hiệu ứng phát sáng */
+  animation: blink 15s infinite;
+}
+
+#right-eye {
+  width: 210px;
+  height: 115px;
+  background-color: #009cd7; /* Màu xanh dương */
+  border-radius: 50%;
+  transform: rotate(20deg) skewX(10deg); /* Đảo hướng mắt */
+  box-shadow: 0 0 20px #009cd7; /* Hiệu ứng phát sáng */
+  animation: blink 15s infinite;
+  transform: rotate(-20deg) skewX(-10deg); /* Đảo hướng mắt phải */
+}
+#video-streams {
+    margin-top: 20px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #181717;
+  outline: 3px #181717 solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.button .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+.button svg path {
+  transition: 400ms;
+}
+
+.button:hover {
+  background-color: transparent;
+}
+
+.button:hover .text {
+  color: #181717;
+}
+
+.button:hover svg path {
+  fill: #181717;
+}
+
+.button-87 {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-87:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-87:active {
+  transform: scale(0.95);
 }

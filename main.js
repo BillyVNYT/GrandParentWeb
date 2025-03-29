@@ -1,6 +1,6 @@
 const APP_ID = "c714ae483b4943978007349f626ee2c8"
-const TOKEN = "007eJxTYGDYv+fiyQ9HJx5pnH3tev/ByyXT/vf6X9m/R5VJ6s92Ltb9CgzJ5oYmiakmFsZJJpYmxpbmFgYG5sYmlmlmRmapqUbJFgcv3UlvCGRkkMqZwczIAIEgPgdDUmZOTmVSaj4DAwACMCRP"
-const CHANNEL = "billybeo"
+const TOKEN = "007eJxTYGi6l7j2v/km2bTzdvZlcmHX+m3ENp6xdp7bU2YQfDYy5YQCQ7K5oUliqomFcZKJpYmxpbmFgYG5sYllmpmRWWqqUbJFYs7z9IZARgY9RxFWRgYIBPF5GdwSczNzKp3z8/JSk0sYGAAf7SEO"
+const CHANNEL = "FamilyConnect"
 
 const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
 
@@ -31,6 +31,8 @@ let joinStream = async () => {
     await joinAndDisplayLocalStream()
     document.getElementById('join-btn').style.display = 'none'
     document.getElementById('stream-controls').style.display = 'flex'
+    document.getElementById('eyes').style.visibility = 'visible'
+    document.getElementById('stream-controls').style.visibility = 'visible'
 }
 
 let handleUserJoined = async (user, mediaType) => {
@@ -71,6 +73,8 @@ let leaveAndRemoveLocalStream = async () => {
     document.getElementById('join-btn').style.display = 'block'
     document.getElementById('stream-controls').style.display = 'none'
     document.getElementById('video-streams').innerHTML = ''
+    document.getElementById('eyes').style.visibility = 'hidden'
+    document.getElementById('stream-controls').style.visibility = 'hidden'
 }
 
 let toggleMic = async (e) => {
